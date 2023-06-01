@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServer.WebApi", "MicroServer\MicroServer.WebApi.csproj", "{6CFFAA0B-B531-4DA7-99B0-5E1FE4D6B077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServer.Domain", "MicroServer.Domain\MicroServer.Domain.csproj", "{FC76F29C-05E5-46DE-9312-2094B2E64FC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CFFAA0B-B531-4DA7-99B0-5E1FE4D6B077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFFAA0B-B531-4DA7-99B0-5E1FE4D6B077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFFAA0B-B531-4DA7-99B0-5E1FE4D6B077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFFAA0B-B531-4DA7-99B0-5E1FE4D6B077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC76F29C-05E5-46DE-9312-2094B2E64FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC76F29C-05E5-46DE-9312-2094B2E64FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC76F29C-05E5-46DE-9312-2094B2E64FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC76F29C-05E5-46DE-9312-2094B2E64FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD48B377-E816-4A16-92CB-53CE93F25916}
+	EndGlobalSection
+EndGlobal

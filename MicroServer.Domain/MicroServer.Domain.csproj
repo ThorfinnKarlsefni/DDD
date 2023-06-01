@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Entites\" />
+    <None Remove="ValueObjects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entites\" />
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Zack.Commons" Version="1.1.11" />
+  </ItemGroup>
+</Project>
