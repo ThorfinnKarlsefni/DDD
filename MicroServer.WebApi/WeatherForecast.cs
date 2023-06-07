@@ -1,4 +1,4 @@
-﻿namespace MicroServer;
+﻿namespace MicroServer.WebApi;
 
 public class WeatherForecast
 {

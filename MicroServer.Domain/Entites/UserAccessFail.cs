@@ -6,9 +6,9 @@ namespace MicroServer.Domain.Entites
         public Guid Id { get; init; }
         public User User { get; init; }
         public Guid UserId { get; init; }
-        private bool isLockOut;
+        private bool lockOut;
 
-        public DateTime? LockEnd { get; private set; }
+        public DateTime? LockoutEnd { get; private set; }
         public int AccessFailCount { get; private set; }
 
         private UserAccessFail() { }
@@ -22,8 +22,8 @@ namespace MicroServer.Domain.Entites
         public void Reset()
         {
             this.AccessFailCount = 0;
-            this.LockEnd = null;
-            this.isLockOut = false;
+            this.LockoutEnd = null;
+            this.lockOut = false;
         }
 
         public void Fail()
@@ -31,16 +31,16 @@ namespace MicroServer.Domain.Entites
             this.AccessFailCount++;
             if (this.AccessFailCount > 3)
             {
-                this.LockEnd = DateTime.Now.AddMinutes(5);
-                this.isLockOut = true;
+                this.LockoutEnd = DateTime.Now.AddMinutes(5);
+                this.lockOut = true;
             }
         }
 
         public bool IsLockOut()
         {
-            if (this.isLockOut)
+            if (this.lockOut)
             {
-                if (DateTime.Now > this.LockEnd)
+                if (DateTime.Now > this.LockoutEnd)
                 {
                     Reset();
                     return false;

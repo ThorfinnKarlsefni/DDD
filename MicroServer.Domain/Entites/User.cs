@@ -1,6 +1,4 @@
 ﻿using System;
-using MicroServer.Domain.ValueObjects;
-using Zack.Commons;
 
 namespace MicroServer.Domain.Entites
 {
@@ -9,21 +7,21 @@ namespace MicroServer.Domain.Entites
         public Guid Id { get; init; }
         public string Name { get; init; }
         public PhoneNumber PhoneNumber { get; private set; }
-        public string? passwordHash;
-        public UserAccessFail userAccessFail { get; private set; }
+        public string? PasswordHash;
+        public UserAccessFail AccessFail { get; private set; }
 
         private User() { }
 
         public User(PhoneNumber phoneNumber)
         {
-            phoneNumber = phoneNumber;
+            PhoneNumber = phoneNumber;
             this.Id = Guid.NewGuid();
-            this.userAccessFail = new UserAccessFail(this);
+            this.AccessFail = new UserAccessFail(this);
         }
 
         public bool HasPassword()
         {
-            return !string.IsNullOrEmpty(this.passwordHash);
+            return !string.IsNullOrEmpty(this.PasswordHash);
         }
 
         public void ChangePassword(string value)
@@ -31,12 +29,12 @@ namespace MicroServer.Domain.Entites
             if (value.Length <= 3)
                 throw new ArgumentException("密码长度不能小于3");
 
-            passwordHash = HashHelper.ComputeMd5Hash(value);
+            PasswordHash = HashHelper.ComputeMd5Hash(value);
         }
 
         public bool CheckPassword(string password)
         {
-            return passwordHash == HashHelper.ComputeMd5Hash(password);
+            return PasswordHash == HashHelper.ComputeMd5Hash(password);
         }
 
         public void ChangePhoneNumber(PhoneNumber phoneNumber)
